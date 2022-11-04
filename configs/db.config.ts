@@ -10,12 +10,4 @@ const MysqlDataSource = new DataSource({
   database: process.env.DB_DATABASE,
 });
 
-MysqlDataSource.initialize()
-  .then(() => {
-    console.log('Data Source has been initialized.');
-  })
-  .catch(err => {
-    console.error('Data Source initiate failed: ', err);
-  });
-
 export { MysqlDataSource };

@@ -5,6 +5,14 @@ import createApp from './app';
 import { MysqlDataSource } from './configs/db.config';
 import { Request, Response } from 'express';
 
+MysqlDataSource.initialize()
+  .then(() => {
+    console.log('Data Source has been initialized.');
+  })
+  .catch(err => {
+    console.error('Data Source initiate failed: ', err);
+  });
+
 const app = createApp();
 app.get('/ping', (_: Request, res: Response) => {
   res.status(200).json({ message: 'pong' });

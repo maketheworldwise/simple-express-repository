@@ -4,7 +4,7 @@
   "description": "simple-express-repository",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "DOTENV_CONFIG_PATH=.env.test jest --setupFiles=dotenv/config --runInBand --detectOpenHandles --forceExit",
     "start": "node dist/server.js",
     "build": "tsc -p ."
   },
@@ -30,5 +30,14 @@
     "type": "git",
     "url": "https://github.com/maketheworldwise/simple-express-repository"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "@types/jest": "^29.2.1",
+    "@types/supertest": "^2.0.12",
+    "babel-jest": "^29.2.2",
+    "jest": "^29.2.2",
+    "supertest": "^6.3.1",
+    "ts-jest": "^29.0.3"
+  }
 }
